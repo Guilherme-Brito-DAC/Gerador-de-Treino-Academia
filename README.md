@@ -1,6 +1,9 @@
 ## Gerador de ficha de treino para academia
 
-
+<img src="imgs/print1.png"/>
+<img src="imgs/print2.png"/>
+<img src="imgs/print3.png"/>
+<img src="imgs/print4.png"/>
 
 Atribuição de icones utilizados
 
