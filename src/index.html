@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de ficha de treino para academia</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/excellentexport@3.9.6/dist/excellentexport.min.js"></script>
+    <script src="js/exportar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js"
+        integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="progress-bar"></div>
+
+    <div id="loading">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+        <p>Estamos gerando sua ficha de treino</p>
+    </div>
+
+    <main id="formulario">
+
+        <div class="container" id="p1">
+            <h2>Qual sua idade?</h2>
+            <div class="opcoes">
+                <div class="opcao opcao-4" data-valor="18-25">
+                    <p>Entre <br /> <span>18-25</span><br /> anos</p>
+                </div>
+                <div class="opcao opcao-4" data-valor="26-35">
+                    <p>Entre <br /><span>26-35</span><br /> anos</p>
+                </div>
+                <div class="opcao opcao-4" data-valor="36-45">
+                    <p>Entre <br /><span>36-45</span><br /> anos</p>
+                </div>
+                <div class="opcao opcao-4" data-valor="46+">
+                    <p>Mais de <br /><span>46</span><br /> anos</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" id="p2">
+            <h2>Qual o seu objetivo?</h2>
+            <div class="opcoes">
+                <div class="opcao opcao-2" data-valor="Ganho de massa muscular">
+                    <p>Ganho de massa muscular <img src="./imgs/musculo.png" /></p>
+                </div>
+                <div class="opcao opcao-2" data-valor="Perder Peso">
+                    <p>Perder Peso <img src="./imgs/balanca.png" /></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="p3">
+            <h2>Qual o seu tipo de Corpo?</h2>
+            <div class="opcoes">
+                <div class="opcao opcao-2" data-valor="Magro">
+                    <p>Magro <img src="./imgs/thin.png" /></p>
+                </div>
+                <div class="opcao opcao-2" data-valor="Padrão">
+                    <p>Padrão <img src="./imgs/man.png" /></p>
+                </div>
+                <div class="opcao opcao-2" data-valor="Acima do Peso">
+                    <p>Acima do Peso <img src="./imgs/fat.png" /></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="p4">
+            <h2>Qual o tipo de Corpo que deseja?</h2>
+            <div class="opcoes">
+                <div class="opcao opcao-2" data-valor="Cut">
+                    <p>Cut <img src="./imgs/cut.png" /></p>
+                </div>
+                <div class="opcao opcao-2" data-valor="Bulk">
+                    <p>Bulk <img src="./imgs/bulk.png" /></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="p5">
+            <h2>Escolha as áreas que deseja treinar</h2>
+            <label>Você pode escolher mais de uma área para treinar</label>
+            <div class="opcoes" multiple="true">
+                <div class="opcao opcao-4" data-valor="Peitoral">
+                    <p>Peitoral <img src="./imgs/peitoral.png" /></p>
+                </div>
+                <div class="opcao opcao-4" data-valor="Costas">
+                    <p>Costas <img src="./imgs/costas.png" /></p>
+                </div>
+                <div class="opcao opcao-4" data-valor="Braço">
+                    <p>Braço <img src="./imgs/braço.png" /></p>
+                </div>
+                <div class="opcao opcao-4" data-valor="Abdômen">
+                    <p>Abdômen <img src="./imgs/abdomen.png" /></p>
+                </div>
+                <div class="opcao opcao-4" data-valor="Perna">
+                    <p>Perna <img src="./imgs/pernas.png" /></p>
+                </div>
+                <div class="opcao opcao-4" data-valor="Glúteos">
+                    <p>Glúteos <img src="./imgs/gluteus.png" /></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="p6">
+            <h2>Qual sua altura?</h2>
+            <div class="opcoes">
+                <div class="input-form">
+                    <input type="text" id="altura" placeholder="0">
+                    <p>cm</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="p7">
+            <h2>Qual o seu peso?</h2>
+            <div class="opcoes">
+                <div class="input-form">
+                    <input type="text" id="peso" placeholder="0">
+                    <p>kg</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="p8">
+            <h2>Qual seu nome?</h2>
+            <div class="opcoes">
+                <div class="input-form">
+                    <input type="text" id="nome" placeholder="Insira seu nome aqui">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <button type="button" id="continuar" disabled>
+                Continuar
+                <span class="material-symbols-outlined">
+                    arrow_right
+                </span>
+            </button>
+        </div>
+
+    </main>
+
+    <div id="resultado" style="display: none;">
+        <div class="container">
+            <h3 id="pronto"></h3>
+            <h4 id="imc"></h4>
+            <div id="chartdiv">
+
+            </div>
+            <div id="ficha-treino">
+
+            </div>
+            <div>
+                <a download="ficha-de-treino.xlsx" href="#" id="exportar" onclick="return exportarParaOExcel()">Exportar
+                    para Excel</a>
+            </div>
+            <label>
+                Sinta-se livre para modificar a ficha de treino de acordo com os exercícios necessários e também dias
+                disponíveis para treino.
+                <br />
+                <br />
+                Lembre-se! É importante consultar um personal trainer para verificar e complementar a ficha
+                acima
+            </label>
+        </div>
+    </div>
+
+    <script type="module" src="js/exercicios.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/util.js"></script>
+</body>
+
+</html>
